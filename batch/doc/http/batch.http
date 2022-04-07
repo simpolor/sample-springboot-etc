@@ -1,0 +1,23 @@
+GET http://127.0.0.1:8080//job/launcher?name=sampleJob
+
+###
+
+GET http://127.0.0.1:8080//job/launcher?name=sampleJob2
+
+###
+
+GET http://127.0.0.1:8080//job/launcher?name=sampleFlowJob
+
+###
+
+GET http://127.0.0.1:8080//job/launcher?name=shareJob
+
+###
+
+GET http://127.0.0.1:8080//job/launcher?name=deciderJob
+
+###
+
+GET http://127.0.0.1:8080//job/launcher?name=itemJob
+
+###
