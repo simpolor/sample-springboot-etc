@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: local
+
+# springboot 2.4 application.yml 변경에 따른 신규버전 사용
+# spring:
+#  config:
+#    activate:
+#      on-profile: "profile"
+#  profiles:
+#    include: "extra1,extra2"

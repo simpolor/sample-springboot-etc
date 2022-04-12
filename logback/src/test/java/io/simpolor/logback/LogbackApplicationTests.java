@@ -1,10 +1,10 @@
-package io.simpolor.aop;
+package io.simpolor.logback;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AopApplicationTests {
+class LogbackApplicationTests {
 
     @Test
     void contextLoads() {

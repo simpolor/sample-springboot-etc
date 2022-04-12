@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<included>
+
+    <appender name="SLACK" class="com.github.maricn.logback.SlackAppender">
+        <webhookUri>https://hooks.slack.com/services/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</webhookUri>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%-4relative [%thread] %-5level %class - %msg%n</pattern>
+            <!-- <pattern>[${spring.profiles.active}/${spring.application.name}] %logger{32} - %msg%n</pattern> -->
+        </layout>
+        <username>sample-springboot-logger</username>
+        <iconEmoji>:stuck_out_tongue_winking_eye:</iconEmoji>
+        <colorCoding>true</colorCoding>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <!--<level>WARN</level>-->
+            <level>DEBUG</level>
+        </filter><!-- 특정 레벨에 동작 가능하도록 설정 가능 -->
+    </appender>
+
+    <!-- SLACK를 사용하나, 비동기로 동작 -->
+    <appender name="ASYNC_SLACK" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="SLACK"/>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <!--<level>WARN</level>-->
+            <level>DEBUG</level>
+        </filter>
+    </appender>
+
+
+</included>

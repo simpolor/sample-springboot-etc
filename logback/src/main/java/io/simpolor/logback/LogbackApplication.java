@@ -1,13 +1,13 @@
-package io.simpolor.aop;
+package io.simpolor.logback;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AopApplication {
+public class LogbackApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AopApplication.class, args);
+        SpringApplication.run(LogbackApplication.class, args);
     }
 
 }

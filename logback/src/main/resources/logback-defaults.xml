@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 사용자가 정의할 만한 속성을 정의 -->
+<included>
+    <springProperty scope="context" name="spring.application.name" source="spring.application.name" defaultValue="application"/>
+    <springProperty scope="context" name="spring.profiles.active" source="spring.profiles.active" defaultValue="default"/>
+    <property name="LOG_FILE" value="./logs/${spring.application.name}.log"/>
+</included>
