@@ -1,0 +1,16 @@
+# report.graphqls
+type Report {
+	reportId: Int!
+	korean: Int
+	english: Int
+	math: Int
+	student: Student
+}
+
+input ReportParam {
+	reportId: Int!
+	korean: Int
+	english: Int
+	math: Int
+	student: StudentParam
+}

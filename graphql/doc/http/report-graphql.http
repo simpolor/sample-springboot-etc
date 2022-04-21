@@ -1,0 +1,157 @@
+# Report 전체 카운트
+GET http://127.0.0.1:8080/graphql?query={countReport}
+Content-Type: application/graphql
+
+###
+
+# ReportCard 전체 카운트
+POST http://127.0.0.1:8080/graphql
+Content-Type: application/graphql
+
+query {
+  countReport
+}
+
+###
+
+# ReportCard 리스트
+POST http://127.0.0.1:8080/graphql
+Content-Type: application/graphql
+
+query {
+  getAllReport {
+    reportId
+    korean
+    english
+    math
+    student {
+      studentId
+      name
+    }
+  }
+}
+
+###
+
+# Student 조회
+POST http://127.0.0.1:8080/graphql
+Content-Type: application/graphql
+
+query {
+  getReport(reportId: 1){
+    reportId
+    korean
+    english
+    math
+    student {
+      studentId
+      name
+      grade
+    }
+  }
+}
+
+###
+
+POST http://127.0.0.1:8080/graphql
+Content-Type: application/graphql
+
+query {
+  countReport
+  getAllReport {
+    reportId
+    korean
+    english
+    math
+    student {
+      studentId
+      name
+      grade
+    }
+  }
+  getReport(reportId: 1){
+    reportId
+    korean
+    english
+    math
+    student {
+      studentId
+      name
+    }
+  }
+}
+
+###
+
+# Student 등록
+POST http://127.0.0.1:8080/graphql
+Content-Type: application/graphql
+
+mutation {
+  createReport(
+    korean: 80
+    english: 30
+    math: 90
+    studentParam: {
+      studentId: 1
+      name: "하니"
+      grade: 1
+      age: 17
+      hobby: "달리기"
+    }
+  ){
+    reportId
+    korean
+    english
+    math
+    student {
+      studentId
+      name
+    }
+  }
+}
+
+###
+
+# Report 수정
+POST http://127.0.0.1:8080/graphql
+Content-Type: application/graphql
+
+mutation {
+  updateReport(
+    reportParam: {
+      reportId: 3
+      korean: 80
+      english: 35
+      math: 90
+      student: {
+        studentId: 1
+        name: "하니"
+        grade: 1
+        age: 17
+        hobby: "달리기"
+      }
+    }
+  ){
+    reportId
+    korean
+    english
+    math
+    student {
+      studentId
+      name
+    }
+  }
+}
+
+###
+
+# Student 삭제
+POST http://127.0.0.1:8080/graphql
+Content-Type: application/graphql
+
+mutation {
+  deleteReport(reportId: 3)
+}
+
+###

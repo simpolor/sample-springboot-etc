@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  jpa:
+    database: H2
+    hibernate:
+      ddl-auto: none
+
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+graphql:
+  tools:
+    schema-location-pattern: "**/*.graphqls" # resource 디렉토리 내의 스키마 파일의 위치 설정
+    introspection-enabled: true # 스키마 확인 기능을 사용하여 타입 시스템
+  servlet:
+    enabled: true # 사용여부
+    mapping: /graphql # GraphQL 요청을 받을 endpoint 설정
+    corsEnabled: true # CORS 검사 사용 여부
+    cors: # CORS 설정
+      allowed-origins: http://localhost # Allowed origin 도메인 설정, List 로 받기 때문에 여러 도메인을 설정 할 수 있다.
