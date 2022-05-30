@@ -2,7 +2,11 @@
 
 <!-- 사용자가 정의할 만한 속성을 정의 -->
 <included>
-    <springProperty scope="context" name="spring.application.name" source="spring.application.name" defaultValue="application"/>
-    <springProperty scope="context" name="spring.profiles.active" source="spring.profiles.active" defaultValue="default"/>
-    <property name="LOG_FILE" value="./logs/${spring.application.name}.log"/>
+
+    <!-- 해당 값이 존재하지 않을 경우 default로 세팅 -->
+    <springProperty scope="context" name="PROFILE" source="spring.profiles.active" defaultValue="default" />
+    <springProperty scope="context" name="FILE_NAME" source="spring.application.name" defaultValue="application" />
+    <springProperty scope="context" name="FILE_PATH" source="logging.file.path" defaultValue="./logs" />
+
+    <property name="LOG_FILE" value="${FILE_PATH}/${FILE_NAME}.log"/>
 </included>
