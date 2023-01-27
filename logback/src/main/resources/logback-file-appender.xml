@@ -7,12 +7,14 @@
 
         <!-- 파일 경로 -->
         <!--<file>./logs/application.log</file>-->
-         <file>${LOG_FILE}</file>
+         <!--<file>${LOG_FILE}</file>-->
+        <file>${FILE_PATH}/${APPLICATION_NAME}.log</file>
 
         <!-- Rolling 정책 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- rollover daily -->
-            <fileNamePattern>./logs/application-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!--<fileNamePattern>./logs/application-%d{yyyy-MM-dd}.%i.log</fileNamePattern>-->
+            <fileNamePattern>${FILE_PATH}/${APPLICATION_NAME}-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>100MB</maxFileSize><!-- 한 파일당 최대 용량 -->
